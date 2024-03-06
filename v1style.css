@@ -1,0 +1,14 @@
+
+#choose-file {
+    height: 0;  
+    width: 0;
+    overflow: hidden;
+  }
+
+.wrapper {
+  background-color: #ffffffb2;
+}
+
+body {
+  background-color: #F8F8F8;
+}

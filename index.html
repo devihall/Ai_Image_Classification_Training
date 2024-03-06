@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Navigation with Bootstrap</title>
+    <!-- Include Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css" integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="v1style.css">
+
+</head>
+<body>
+
+<div class="container mt-5">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#" onclick="openTab(event, 'home')">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="openTab(event, 'about')">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="openTab(event, 'contact')">Contact</a>
+        </li>
+    </ul>
+
+    <div id="home" class="tabcontent mt-3">
+        <h3>Home</h3>
+        <p>Hello World!</p>
+
+           <div class="container mt-3 p-2 d-flex justify-content-center">
+        <div class="row">
+            <div class="col border p-3 wrapper">
+                <h4 class="d-flex justify-content-center">AI IMAGE CLASSIFICATION</h4>
+                <div class="img pb-3">
+                    <img class="img-thumbnail" id="image" src="http://placehold.it/300" width="300px" height="300px" />
+                </div>
+                <div class="buttonList d-flex justify-content-center gap-1">
+                    <input type="file" id="choose-file" onchange="readURL(this);" accept="image/*" />
+                    <label class="btn btn-primary" for="choose-file">Choose Image</label>
+                    <button class="btn btn-success" id="check" onclick="classify()">Classify</button>
+                </div>
+                <div class="p-2 mt-3" style="width: 300px;" id="result"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="about" class="tabcontent mt-3" style="display: none;">
+        <h3>About</h3>
+        <p>This is the about page.</p>
+    </div>
+
+    <div id="contact" class="tabcontent mt-3" style="display: none;">
+        <h3>Contact</h3>
+        <p>Contact us here.</p>
+    </div>
+</div>
+
+<!-- jQuery-logic for styling -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap JS logic for styling-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+<!-- v1app.js- logic for classifier -->
+<script src="v1app.js"></script>
+<!-- script.js- logic for tab navigation -->
+<script src="script.js"></script>
+
+</body>
+</html>
