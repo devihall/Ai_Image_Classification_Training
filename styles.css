@@ -2,32 +2,44 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.tabs {
+/*  */
+.file-upload {
+  text-align: center;
+}
+
+.file-thumbnail {
+  margin-bottom: 10px;
+}
+
+.file-name {
+  font-size: 14px;
+}
+#choose-file {
+  position: absolute;
+  left: -9999px;
+}
+#choose-file {
+    height: 0;  
+    width: 0;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+  }
+
+.wrapper {
+  background-color: #ffffffb2;
 }
 
-.tab {
-    float: left;
+body {
+  background-color: #F8F8F8;
 }
 
-.tab a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
+#thumbnails-container {
+  display: grid; /* Use flexbox layout */
+  flex-direction: row;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Add some margin between rows */*/
 }
-
-.tab a:hover {
-    background-color: #ddd;
-}
-
-.tabcontent {
-    display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-top: none;
+.img-thumbnail {
+  width: 50px; /* Set the width to your desired size */
+  height: auto; /* Let the height adjust automatically */
+  margin: 5px; 
 }
