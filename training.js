@@ -1,13 +1,14 @@
 
 // /////////upload file, display thumnails & file names
 function readURL(input) {
-  console.log("fileinfo", input);
+  // console.log("fileinfo", input);
       var container = document.getElementById("thumbnails-container");
       container.innerHTML = "";
 
       if (input.files && input.files.length) {
         for (var i = 0; i < input.files.length; i++) {
           var file = input.files[i];
+          console.log("file",file)
           var reader = new FileReader();
 
           reader.onload = (function (file) {
