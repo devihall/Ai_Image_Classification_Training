@@ -3,25 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>File Upload Grid</title>
+<title>AI Shark Tooth Model Training</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="training.css">
 </head>
 <body>
 
 <div class="container mt-5">
-    <ul class="nav nav-tabs">
+
+<ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="index.html" onclick="openTab(event, 'home')">Classification</a>
+            <a class="nav-link active" href="training.html" onclick="openTab(event, 'home')">Training</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="training.html" onclick="openTab(event, 'about')">Training</a>
+            <a class="nav-link" href="classification.html" onclick="openTab(event, 'about')">Classification</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" onclick="openTab(event, 'contact')">Performance</a>
         </li>
     </ul>
+
+<div id="home" class="tabcontent mt-3">
+        <h3>Train Shark Tooth ML Model</h3>
+        <p>Upload an images for class</p>
+
   <div class="row">
+
+    
     <div class="col border p-3 wrapper">
                 <h4 class="d-flex ">Category 1</h4>
                 <div class="img pb-3" id="thumbnails-container" >
@@ -101,5 +109,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="training.js"></script>
+<script src="classification.js"></script>
+
 </body>
 </html>
