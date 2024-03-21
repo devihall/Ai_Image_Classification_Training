@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Input Image Thumbnails</title>
+<style>
+
+#thumbnails-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px; /* Add some top margin for spacing */
+    padding: 5px; /* Add padding for better visibility */
+    border: 1px solid #ccc; /* Add border for visualization */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    background-color: #f9f9f9; /* Add background color for better contrast */
+    min-height: 100px; /* Set initial height */
+  }
+  .thumbnail {
+    width: 90px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thumbnail img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+</style>
+</head>
+<body>
+  <input type="file" id="file-input" multiple accept="image/*" onchange="handleFileInput(this);">
+  <div id="thumbnails-container"></div>
+
+<script>
+  const fileInput = document.getElementById('file-input');
+  const thumbnailsContainer = document.getElementById('thumbnails-container');
+
+//   fileInput.addEventListener('change', function () {})
+
+
+  fileInput.addEventListener('change', function() {
+    thumbnailsContainer.innerHTML = ''; // Clear existing thumbnails
+
+    const files = Array.from(fileInput.files);
+    files.forEach(file => {
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+        const thumbnail = document.createElement('div');
+        thumbnail.classList.add('thumbnail');
+        const image = document.createElement('img');
+        image.src = event.target.result;
+        thumbnail.appendChild(image);
+        thumbnailsContainer.appendChild(thumbnail);
+        
+        // Dynamically adjust the height of the container
+        thumbnailsContainer.style.minHeight = thumbnailsContainer.scrollHeight + 'px';
+      };
+
+      reader.readAsDataURL(file);
+    });
+  });
+
+  function handleFileInput(input) {
+  console.log("input", input);
+  }
+
+</script>
+</body>
+</html>
+

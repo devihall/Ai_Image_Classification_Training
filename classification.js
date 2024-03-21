@@ -45,6 +45,7 @@ function classify() {
   // Initialize Image Classifier with MobileNet.
   const classifier = ml5.imageClassifier("MobileNet");
   img = document.getElementById("image");
+  console.log("IMG", img)
   // img = loadImage('cat.png');
   classifier.classify(img, gotResult);
 
